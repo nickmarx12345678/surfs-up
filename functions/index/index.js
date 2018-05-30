@@ -20,7 +20,7 @@ exports.handle = function(event, context) {
 
     var tomorrowForecast = body[0]; //TODO
 
-    if (true){//surfableStates.includes(tomorrowForecast.shape_full)) {
+    if (surfableStates.includes(tomorrowForecast.shape_full)) {
       console.log('lookin good!');
       sns.publish(params, context.done);
     } else {
