@@ -1,0 +1,8 @@
+{
+  "name": "surfs-up",
+  "description": "lemme know when surf hits pacifica",
+  "memory": 128,
+  "timeout": 5,
+  "role": "arn:aws:iam::606748693934:role/surfs-up_lambda_function",
+  "environment": {}
+}
