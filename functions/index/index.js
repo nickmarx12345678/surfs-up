@@ -18,7 +18,7 @@ exports.handle = function(event, context) {
     if (err) { return console.log(err); }
     console.log(body);
 
-    var tomorrowForecast = body[0]; //TODO
+    var tomorrowForecast = forecastAt(body, "8AM");
 
     if (surfableStates.includes(tomorrowForecast.shape_full)) {
       console.log('lookin good!');
@@ -26,8 +26,12 @@ exports.handle = function(event, context) {
     } else {
       console.log('not today buddy');
     }
-
   });
 };
 
+function forecastAt(predictions, time) {
+  return predictions.find(function(prediction) {
+    return predicion['hour'] === time;
+  })
+}
 
