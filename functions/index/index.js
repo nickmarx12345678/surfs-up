@@ -20,6 +20,8 @@ exports.handle = function(event, context) {
 
     var tomorrowForecast = forecastAt(body, "8AM");
 
+    console.log(tomorrowForecast);
+
     if (surfableStates.includes(tomorrowForecast.shape_full)) {
       console.log('lookin good!');
       sns.publish(params, context.done);
@@ -31,7 +33,7 @@ exports.handle = function(event, context) {
 
 function forecastAt(predictions, time) {
   return predictions.find(function(prediction) {
-    return predicion['hour'] === time;
+    return prediction['hour'] === time;
   })
 }
 
